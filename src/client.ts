@@ -123,7 +123,7 @@ export class SpectralClient {
 
     return {
       service: stringField("lookup", obj, "service"),
-      instanceId: stringField("lookup", obj, "instance_id"),
+      instanceId: typeof obj["instance_id"] === "string" ? obj["instance_id"] : "",
       endpoint: stringField("lookup", obj, "endpoint"),
     };
   }
